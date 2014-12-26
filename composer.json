@@ -1,0 +1,25 @@
+{
+	"name": "katsana/my-waterlevel",
+	"description": "Water Level Scraping using PHP",
+	"license": "BSD-4-Clause",
+	"authors": [
+		{
+			"name": "Katsana Development Team",
+			"email": "developer@katsana.com"
+		}
+	],
+	"autoload": {
+		"psr-4": {
+			"MyKatsana\\WaterLevel\\": "src/"
+		}
+	},
+	"require": {
+		"fabpot/goutte": "~2.0",
+		"illuminate/support": "~5.0",
+		"nesbot/carbon": "*"
+	},
+	"require-dev": {
+		"phpspec/phpspec": "~2.1"
+	},
+	"minimum-stability": "dev"
+}
