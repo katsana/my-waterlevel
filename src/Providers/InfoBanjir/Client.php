@@ -50,7 +50,7 @@ class Client implements ClientContract
     public function execute()
     {
         $result = [];
-        
+
         foreach ($this->getAvailableStateCode() as $code => $name) {
             $response = $this->executeByState($code);
 
@@ -116,7 +116,7 @@ class Client implements ClientContract
      * Get scrapper callback.
      *
      * @param  string  $code
-     * @return callable
+     * @return \Closure
      */
     protected function getScrapperCallback($code)
     {
@@ -180,6 +180,12 @@ class Client implements ClientContract
         return true;
     }
 
+    /**
+     * Remove non-ascii characters from string.
+     *
+     * @param  string  $text
+     * @return string
+     */
     protected function trimNonAscii($text)
     {
         $text = preg_replace('/[[:^print:]]/', '', Str::ascii($text));
