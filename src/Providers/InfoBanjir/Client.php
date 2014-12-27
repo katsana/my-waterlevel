@@ -1,6 +1,7 @@
 <?php namespace MyKatsana\WaterLevel\Providers\InfoBanjir;
 
 use Carbon\Carbon;
+use Illuminate\Support\Arr;
 use Illuminate\Support\Str;
 use Goutte\Client as Goutte;
 use InvalidArgumentException;
@@ -48,9 +49,17 @@ class Client implements ClientContract
      */
     public function execute()
     {
+        $result = [];
+        
         foreach ($this->getAvailableStateCode() as $code => $name) {
-            $this->executeByState($code);
+            $response = $this->executeByState($code);
+
+            if (! empty($response)) {
+                $result[$code] = $response;
+            }
         }
+
+        return $result;
     }
 
     /**
@@ -73,7 +82,9 @@ class Client implements ClientContract
             throw $e;
         }
 
-        return $result;
+        return array_filter($result, function ($value) {
+            return ! is_null($value);
+        });
     }
 
     /**
