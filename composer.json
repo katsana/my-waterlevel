@@ -20,7 +20,8 @@
 		"nesbot/carbon": "*"
 	},
 	"require-dev": {
-		"phpspec/phpspec": "~2.1"
+		"phpspec/phpspec": "~2.1",
+		"symfony/console": "2.6.*"
 	},
 	"minimum-stability": "dev"
 }

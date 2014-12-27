@@ -1,0 +1,5 @@
+suites:
+    main:
+        namespace: MyKatsana\WaterLevel
+        psr4_prefix: MyKatsana\WaterLevel
+        src_path: src
