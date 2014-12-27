@@ -23,3 +23,16 @@ To install through composer, simply put the following in your `composer.json` fi
 ```
 
 And then run `composer install` from the terminal.
+
+## Usage
+
+```php
+<?php
+
+use MyKatsana\WaterLevel\Providers\InfoBanjir\Client;
+
+$client = new Client;
+$response = $client->executeByState('WLH');
+```
+
+`$response` will return a collection (array) of `MyKatsana\WaterLevel\Providers\InfoBanjir\Data`.
