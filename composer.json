@@ -23,5 +23,10 @@
 		"phpspec/phpspec": "~2.1",
 		"symfony/console": "2.6.*"
 	},
+	"extra": {
+		"branch-alias": {
+			"dev-master": "0.1-dev"
+		}
+	},
 	"minimum-stability": "dev"
 }
