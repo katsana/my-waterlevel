@@ -12,16 +12,27 @@ class DataSpec extends ObjectBehavior
 
     public function it_should_return_correct_status()
     {
-        $this->beConstructedWith([
-            'water' => 4.4,
-            'meta' => [
-                'normal'  => 4.0,
-                'alert'   => 5.0,
-                'warning' => 6.0,
-                'danger'  => 7.0,
-            ]
-        ]);
+        $meta = [
+            'normal'  => 4.0,
+            'alert'   => 5.0,
+            'warning' => 6.0,
+            'danger'  => 7.0,
+        ];
 
-        $this->getStatus()->shouldBe('normal');
+        $this->beConstructedWith(['meta' => $meta]);
+
+        $tests = [
+            ['value' => 3.2, 'expected' => 'normal'],
+            ['value' => 4.4, 'expected' => 'normal'],
+            ['value' => 5.4, 'expected' => 'alert'],
+            ['value' => 6.4, 'expected' => 'warning'],
+            ['value' => 7.4, 'expected' => 'danger'],
+        ];
+
+        foreach ($tests as $test) {
+            $this->water($test['value']);
+
+            $this->getStatus()->shouldBe($test['expected']);
+        }
     }
 }
