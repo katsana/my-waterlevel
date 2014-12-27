@@ -95,7 +95,7 @@ class Client implements ClientContract
     public function getAvailableStateCode()
     {
         return [
-            'PEL' => 'Perlis',
+            'PLS' => 'Perlis',
             'KDH' => 'Kedah',
             'PNG' => 'Pulau Pinang',
             'PRK' => 'Perak',
