@@ -32,7 +32,17 @@ class DataSpec extends ObjectBehavior
         foreach ($tests as $test) {
             $this->water($test['value']);
 
+            $this->getWaterLevel()->shouldBe($test['value']);
             $this->getStatus()->shouldBe($test['expected']);
         }
+    }
+
+    public function it_should_return_station_id()
+    {
+        $station = ['id' => 12345, 'name' => 'Foo'];
+        $this->beConstructedWith(['station' => $station]);
+
+        $this->getStationId()->shouldBe($station['id']);
+        $this->getStation()->shouldBe($station);
     }
 }

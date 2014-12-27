@@ -12,7 +12,7 @@ class Data extends Fluent implements DataContract
      */
     public function getStationId()
     {
-        return $this->get('station.id');
+        return data_get($this->attributes, 'station.id');
     }
 
     /**
@@ -40,7 +40,7 @@ class Data extends Fluent implements DataContract
      *
      * @return float
      */
-    public function getRiverLevel()
+    public function getWaterLevel()
     {
         return $this->get('water');
     }

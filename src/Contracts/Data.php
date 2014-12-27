@@ -28,7 +28,7 @@ interface Data
      *
      * @return float
      */
-    public function getRiverLevel();
+    public function getWaterLevel();
 
     /**
      * Get river status, either "normal", "alert", "warning" or "danger".
