@@ -108,7 +108,7 @@ class Client implements ClientContract
             'TRG' => 'Terengganu',
             'KEL' => 'Kelantan',
             'SRK' => 'Sarawak',
-            'SBH' => 'Sabah',
+            'SAB' => 'Sabah',
         ];
     }
 
